@@ -1,0 +1,17 @@
+{% extends 'sglikelion/base.html' %}
+
+    {% block content %}
+    <a href="{% url 'post_edit' index=post.pk %}">수정하기</a>
+        <div class="post">
+            {% if post.published_date %}
+                <div class="date">
+                    {{ post.published_date }}
+                </div>
+            {% else %}
+                <a class="btn btn-default" href="{% url 'post_publish' index=post.pk %}">Publish</a>
+            {% endif %}
+            <h1>{{ post.title }}</h1>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+    {% endblock %}
+    

@@ -1,0 +1,19 @@
+{% extends 'sglikelion/base.html' %}
+    {% block content %}
+        
+            
+                {% for post in posts %}
+                <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{ post.title }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{ post.published_date }}</h6>
+                    <p class="card-text">{{post.text}}</p>
+                    <a href="{% url 'post_detail' index=post.pk %}" class="card-link">...more</a>
+                 </div>
+                </div>    
+                {% endfor %}
+           
+       
+    {% endblock %}
+    
+
