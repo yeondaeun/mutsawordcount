@@ -1,0 +1,1 @@
+web: gunicorn likelionmock.wsgi --log-file -
